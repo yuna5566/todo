@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "sass-compile-dev": "sass --watch --no-source-map style.scss assets/style.css",
+    "sass-compile": "sass style.scss assets/style.css"
+  },
+  "dependencies": {
+    "sass": "^1.56.1"
+  }
+}
