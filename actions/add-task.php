@@ -1,6 +1,8 @@
 <?php 
 include '../init.php';
 
+$app_url = APP_URL;
+
 if ($_POST) {
     $name = $_POST['name'] ?? '';
     $prio = isset($_POST['priority']) ? 1 : 0;
@@ -10,9 +12,9 @@ if ($_POST) {
             "name" => $name,
             "priority"  => $prio
         ]);
-        header("Location: http://localhost/todo-php/?link=tasks&success=1");
+        header("Location: $app_url/?link=tasks&success=1");
     } else {
-        header("Location: http://localhost/todo-php/?link=add-task&error=1");
+        header("Location: $app_url/?link=add-task&error=1");
     }
     
 }

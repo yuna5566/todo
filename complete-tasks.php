@@ -5,7 +5,7 @@ $tasks = (new Task())->getCompletes($sort);
 
 <h1 class="mb-1">Completed Tasks</h1>
 <div class="mb-1">
-    Sort By: <a class="a-link" href="http://localhost/todo-php/?link=complete-tasks&sort=priority">Priority</a> / <a class="a-link" href="http://localhost/todo-php/?link=complete-tasks&sort=name">Name</a>
+    Sort By: <a class="a-link" href="<?= APP_URL ?>?link=complete-tasks&sort=priority">Priority</a> / <a class="a-link" href="<?= APP_URL ?>/?link=complete-tasks&sort=name">Name</a>
 </div>
 <ul class="list">
     <?php foreach($tasks as $task): ?>

@@ -1,6 +1,6 @@
 <?php 
 include '../init.php';
-
+$app_url = APP_URL;
 if ($_POST) {
     $id = $_POST['id'];
     $name = $_POST['name'] ?? '';
@@ -14,9 +14,9 @@ if ($_POST) {
             'is_complete' => $complete,
             'id' => $id
         ]);
-        header("Location: http://localhost/todo-php/?link=task&success=1");
+        header("Location: $app_url/?link=task&success=1");
     } else {
-        header("Location: http://localhost/todo-php/?link=add-task&error=1");
+        header("Location: $app_url/?link=add-task&error=1");
     }
     
 }

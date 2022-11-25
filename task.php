@@ -2,7 +2,8 @@
 $id = $_GET['id'];
 $task = new Task($id);
 if (!isset($task->id)) {
-    header("Location: http://localhost/todo-php?link=tasks&error=1");
+    $app_url = APP_URL;
+    header("Location: $app_url?link=tasks&error=1");
 }
 ?>
 

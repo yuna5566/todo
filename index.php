@@ -28,12 +28,12 @@ $link = $_GET['link'] ?? 'tasks';
                 <ul class="list p-1">
                     <li class="list-item">
                         <h3 class="flex justify-content-between align-items-center">
-                            <a class="a-link font-weight-500" href="http://localhost/todo-php?link=tasks">Tasks</a>
-                            <a class="a-link font-weight-500" href="http://localhost/todo-php?link=add-task"><ion-icon name="add-circle-outline"></ion-icon></a>
+                            <a class="a-link font-weight-500" href="<?= APP_URL ?>?link=tasks">Tasks</a>
+                            <a class="a-link font-weight-500" href="<?= APP_URL ?>?link=add-task"><ion-icon name="add-circle-outline"></ion-icon></a>
                         </h3>
                     </li>
                     <li class="list-item">
-                        <h3><a class="a-link font-weight-500" href="http://localhost/todo-php?link=complete-tasks">Completed</a></h3>
+                        <h3><a class="a-link font-weight-500" href="<?= APP_URL ?>?link=complete-tasks">Completed</a></h3>
                     </li>
                 </ul>
             </div>
