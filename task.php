@@ -7,7 +7,14 @@ if (!isset($task->id)) {
 }
 ?>
 
-<h1 class="mb-1">Task</h1>
+<div class="flex justify-content-between">
+    <h1 class="mb-1">Task</h1>
+    <form method="POST" action="actions/delete-task.php">
+        <input name="delete-id" type="text" value=<?= $task->id ?> hidden />
+        <button type="submit" class="border-none cursor-pointer"><ion-icon name="trash" size="large" class="icon-error"></ion-icon></button>
+    </form>
+</div>
+
 <form method="POST" action="actions/update-task.php">
     <input name="id" type="text" value=<?= $task->id ?> hidden />
     <div class="flex mb-1">

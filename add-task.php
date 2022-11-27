@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <h1 class="mb-1">Add Task</h1>
 <form method="POST" action="actions/add-task.php">
     <div class="flex mb-1">

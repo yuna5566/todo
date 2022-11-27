@@ -29,8 +29,9 @@ class Task extends DB {
         return $tasks;
     }
 
-    public function delete($id) {
-        return $this->softDelete($id);
+    public function delete() {
+        if (!($this->id ?? null)) return null;
+        return $this->softDelete($this->id);
     }
 
     public function update($data) {

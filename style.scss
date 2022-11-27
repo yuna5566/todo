@@ -44,6 +44,13 @@ body {
     &-success {
         border-color: $success;
     }
+    &-none {
+        border: none;
+    }
+}
+
+.icon-error {
+    color: $error;
 }
 
 .card {
@@ -119,6 +126,10 @@ body {
     }
 }
 
+.cursor-pointer {
+    cursor: pointer;
+}
+
 .a-link {
     text-decoration: none;
     color: black;
@@ -162,6 +173,7 @@ body {
     &-primary {
         background-color: $primary;
     }
+    cursor: pointer;
 }
 
 .input {
@@ -182,4 +194,13 @@ body {
     &-checkbox-label {
         margin: 0px 20px 0px 3px;
     }
+}
+
+.alert {
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    &-success { background-color: $success; }
+
+    &-error { background-color: $error; }
 }

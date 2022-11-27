@@ -1,6 +1,8 @@
 <?php 
 include '../init.php';
 $app_url = APP_URL;
+$message = '';
+$status = '';
 if ($_POST) {
     $id = $_POST['id'];
     $name = $_POST['name'] ?? '';
@@ -14,9 +16,13 @@ if ($_POST) {
             'is_complete' => $complete,
             'id' => $id
         ]);
-        header("Location: $app_url/?link=task&success=1");
+        $status = 'success';
+        $message = 'Task successfully updated.';
     } else {
-        header("Location: $app_url/?link=add-task&error=1");
+        $status = 'error';
+        $message = 'Unable to update task.';
     }
-    
 }
+setcookie('status', $status, time()+1, '/');
+setcookie('message', $message, time()+1, '/');
+header("Location: $app_url/?link=task");

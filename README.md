@@ -34,5 +34,8 @@ To run this project, you will need to add the following environment variables to
 ```
 DB_PATH=path_to_database.db
 DB_NAME=name_of_database
+APP_DOMAIN=http://localhost
+APP_NAME=root_folder_name
+
 ```
 

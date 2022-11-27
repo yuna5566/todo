@@ -1,8 +1,8 @@
 <?php 
 include '../init.php';
-
 $app_url = APP_URL;
-
+$message = '';
+$status = '';
 if ($_POST) {
     $name = $_POST['name'] ?? '';
     $prio = isset($_POST['priority']) ? 1 : 0;
@@ -12,10 +12,14 @@ if ($_POST) {
             "name" => $name,
             "priority"  => $prio
         ]);
-        header("Location: $app_url/?link=tasks&success=1");
+        $status = 'success';
+        $message = 'Task successfully added';
     } else {
-        header("Location: $app_url/?link=add-task&error=1");
+        $status = 'error';
+        $message = 'Unable to add task';
     }
-    
 }
+setcookie('status', $status, time()+1, '/');
+setcookie('message', $message, time()+1, '/');
+header("Location: $app_url/?link=tasks&success=1");
 
