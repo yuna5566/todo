@@ -29,6 +29,17 @@ class Task extends DB {
         return $tasks;
     }
 
+    public function getTaskCounts() {
+        $incompleteTasks = $this->getIncompletes();
+        $completeTasks = $this->getCompletes();
+        $completeTasksCount = count($completeTasks) ?? 0;
+        $totalTaskCount = (count($incompleteTasks) ?? 0) + $completeTasksCount;
+        return [
+            'completed' => $completeTasksCount,
+            'total' => $totalTaskCount
+        ];
+    }
+
     public function delete() {
         if (!($this->id ?? null)) return null;
         return $this->softDelete($this->id);

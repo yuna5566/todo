@@ -4,6 +4,7 @@ $tasks = (new Task())->getCompletes($sort);
 ?>
 
 <h1 class="mb-1">Completed Tasks</h1>
+<?php include_once 'task-analytics.php' ?>
 <div class="mb-1">
     Sort By: <a class="a-link" href="<?= APP_URL ?>?link=complete-tasks&sort=priority">Priority</a> / <a class="a-link" href="<?= APP_URL ?>/?link=complete-tasks&sort=name">Name</a>
 </div>
